@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.168
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Analyzer1", "Analyzer1\Analyzer1\Analyzer1.csproj", "{520E1B44-22D4-45C2-9F7C-523754083D67}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ValueObjectSyntaxTreeAnalyzer", "ValueObjectSyntaxTreeAnalyzer\ValueObjectSyntaxTreeAnalyzer\ValueObjectSyntaxTreeAnalyzer.csproj", "{4539B212-C15F-4533-851A-2636664E18AC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Analyzer1.Test", "Analyzer1\Analyzer1.Test\Analyzer1.Test.csproj", "{C65C5147-680A-4186-81DF-65ACEF08E341}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ValueObjectSyntaxTreeAnalyzer.Test", "ValueObjectSyntaxTreeAnalyzer\ValueObjectSyntaxTreeAnalyzer.Test\ValueObjectSyntaxTreeAnalyzer.Test.csproj", "{78EAFC6C-08C3-4908-B48E-E3E004D167FD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Analyzer1.Vsix", "Analyzer1\Analyzer1.Vsix\Analyzer1.Vsix.csproj", "{071467A6-A978-4E44-A03F-AB3258288D52}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValueObjectSyntaxTreeAnalyzer.Vsix", "ValueObjectSyntaxTreeAnalyzer\ValueObjectSyntaxTreeAnalyzer.Vsix\ValueObjectSyntaxTreeAnalyzer.Vsix.csproj", "{071467A6-A978-4E44-A03F-AB3258288D52}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,14 +15,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{520E1B44-22D4-45C2-9F7C-523754083D67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{520E1B44-22D4-45C2-9F7C-523754083D67}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{520E1B44-22D4-45C2-9F7C-523754083D67}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{520E1B44-22D4-45C2-9F7C-523754083D67}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C65C5147-680A-4186-81DF-65ACEF08E341}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C65C5147-680A-4186-81DF-65ACEF08E341}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C65C5147-680A-4186-81DF-65ACEF08E341}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C65C5147-680A-4186-81DF-65ACEF08E341}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4539B212-C15F-4533-851A-2636664E18AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4539B212-C15F-4533-851A-2636664E18AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4539B212-C15F-4533-851A-2636664E18AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4539B212-C15F-4533-851A-2636664E18AC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78EAFC6C-08C3-4908-B48E-E3E004D167FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78EAFC6C-08C3-4908-B48E-E3E004D167FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78EAFC6C-08C3-4908-B48E-E3E004D167FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78EAFC6C-08C3-4908-B48E-E3E004D167FD}.Release|Any CPU.Build.0 = Release|Any CPU
 		{071467A6-A978-4E44-A03F-AB3258288D52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{071467A6-A978-4E44-A03F-AB3258288D52}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{071467A6-A978-4E44-A03F-AB3258288D52}.Release|Any CPU.ActiveCfg = Release|Any CPU

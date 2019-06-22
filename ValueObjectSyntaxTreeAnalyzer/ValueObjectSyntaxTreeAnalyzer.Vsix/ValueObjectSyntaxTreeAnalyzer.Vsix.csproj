@@ -58,9 +58,11 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Analyzer1\Analyzer1.csproj">
-      <Project>{520E1B44-22D4-45C2-9F7C-523754083D67}</Project>
-      <Name>Analyzer1</Name>
+    <ProjectReference Include="..\ValueObjectSyntaxTreeAnalyzer\ValueObjectSyntaxTreeAnalyzer.csproj">
+      <Project>{4539b212-c15f-4533-851a-2636664e18ac}</Project>
+      <Name>ValueObjectSyntaxTreeAnalyzer</Name>
+      <IncludeOutputGroupsInVSIX>BuiltProjectOutputGroup%3bBuiltProjectOutputGroupDependencies%3bGetCopyToOutputDirectoryItems%3bSatelliteDllsProjectOutputGroup%3b</IncludeOutputGroupsInVSIX>
+      <IncludeOutputGroupsInVSIXLocalOnly>DebugSymbolsProjectOutputGroup%3b</IncludeOutputGroupsInVSIXLocalOnly>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
