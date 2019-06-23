@@ -7,20 +7,21 @@ using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.CodeAnalysis.Diagnostics;
+using ValueObjectSyntaxTreeAnalyzer;
 
 namespace Analyzer1
 {
     [DiagnosticAnalyzer(LanguageNames.CSharp)]
     public class Analyzer1Analyzer : DiagnosticAnalyzer
     {
-        public const string DiagnosticId = "IsValidMethodAnalyzer";
+        public const string DiagnosticId = "IsValidMethodAnalyzer1";
         private static readonly LocalizableString Title = new LocalizableResourceString(nameof(Resources.AnalyzerTitle), Resources.ResourceManager, typeof(Resources));
         private static readonly LocalizableString MessageFormat = new LocalizableResourceString(nameof(Resources.AnalyzerMessageFormat), Resources.ResourceManager, typeof(Resources));
         private static readonly LocalizableString Description = new LocalizableResourceString(nameof(Resources.AnalyzerDescription), Resources.ResourceManager, typeof(Resources));
         private const string Category = "Code Structure Reformator";
 
         private static DiagnosticDescriptor CreateIsValidRule
-            = new DiagnosticDescriptor(DiagnosticId, Title, MessageFormat, Category, DiagnosticSeverity.Warning, isEnabledByDefault: true, description: Description);
+            = new DiagnosticDescriptor(DiagnosticId, Title, MessageFormat, Category, DiagnosticSeverity.Error, isEnabledByDefault: true, description: Description);
 
         public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics { get { return ImmutableArray.Create(CreateIsValidRule); } }
 
@@ -28,9 +29,6 @@ namespace Analyzer1
         {
             context.RegisterSyntaxNodeAction(AnalyzeNode, SyntaxKind.AttributeList);
         }
-
-        private static DiagnosticDescriptor ErrorRule =
-        new DiagnosticDescriptor(DiagnosticId, Title, MessageFormat, Category, DiagnosticSeverity.Warning, isEnabledByDefault: true, description: Description);
 
 
         private static bool IsValidMethodContains(MethodDeclarationSyntax mds)
@@ -64,7 +62,7 @@ namespace Analyzer1
 
             if (!maybeIsValidMethod.Any() || !maybeIsValidMethod.Any(x => IsValidMethodContains(x)))
             {
-                context.ReportDiagnostic(Diagnostic.Create(ErrorRule, context.Node.Parent.GetLocation()));
+                context.ReportDiagnostic(Diagnostic.Create(CreateIsValidRule, cds.Identifier.GetLocation()));
             }
         }
     }

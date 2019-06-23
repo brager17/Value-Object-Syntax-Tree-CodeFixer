@@ -118,15 +118,15 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AnalyzerDescription" xml:space="preserve">
-    <value>Creator IsValid Method of ValueObject</value>
-    <comment>An optional longer localizable description of the diagnostic.</comment>
+    <value>Creator IsValid Method of ValueObject1</value>
+    <comment>An optional longer localizable description of the diagnostic.1</comment>
   </data>
   <data name="AnalyzerMessageFormat" xml:space="preserve">
-    <value>Creator IsValid Method of ValueObject</value>
-    <comment>The format-able message the diagnostic displays.</comment>
+    <value>Creator IsValid Method of ValueObject1</value>
+    <comment>The format-able message the diagnostic displays.1</comment>
   </data>
   <data name="AnalyzerTitle" xml:space="preserve">
-    <value>Creator IsValid Method of ValueObject</value>
-    <comment>The title of the diagnostic.</comment>
+    <value>Creator IsValid Method of ValueObject1</value>
+    <comment>The title of the diagnostic.1</comment>
   </data>
 </root>

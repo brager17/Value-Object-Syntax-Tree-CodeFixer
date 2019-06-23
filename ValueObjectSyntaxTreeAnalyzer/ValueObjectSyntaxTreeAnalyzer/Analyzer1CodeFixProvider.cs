@@ -23,7 +23,8 @@ namespace Analyzer1
       public static IEnumerable<ValidationResult> IsValid()
       {
            throw new NotImplementException();
-      }").GetRoot().DescendantNodes().OfType<MethodDeclarationSyntax>().Single();
+      }
+      ").GetRoot().DescendantNodes().OfType<MethodDeclarationSyntax>().Single();
 
         public sealed override ImmutableArray<string> FixableDiagnosticIds
         {
@@ -53,7 +54,7 @@ namespace Analyzer1
         private async Task<Document> MakeSolution(Document document, ClassDeclarationSyntax cds, CancellationToken cancellationToken)
         {
             var oldTree = await document.GetSyntaxRootAsync();
-            var newCds = cds.WithMembers(new SyntaxList<MemberDeclarationSyntax>(IsValidMethodTemplate));
+            var newCds = cds.AddMembers(IsValidMethodTemplate);
             var newTree = oldTree.ReplaceNode(cds, newCds);
             return document.WithSyntaxRoot(newTree);
 

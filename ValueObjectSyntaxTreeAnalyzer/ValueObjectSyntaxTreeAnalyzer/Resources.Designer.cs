@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Analyzer1 {
+namespace ValueObjectSyntaxTreeAnalyzer {
     using System;
     using System.Reflection;
     
@@ -40,7 +40,7 @@ namespace Analyzer1 {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Analyzer1.Resources", typeof(Resources).GetTypeInfo().Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("ValueObjectSyntaxTreeAnalyzer.Resources", typeof(Resources).GetTypeInfo().Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -62,7 +62,7 @@ namespace Analyzer1 {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Creator IsValid Method of ValueObject.
+        ///   Ищет локализованную строку, похожую на Creator IsValid Method of ValueObject1.
         /// </summary>
         internal static string AnalyzerDescription {
             get {
@@ -71,7 +71,7 @@ namespace Analyzer1 {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Creator IsValid Method of ValueObject.
+        ///   Ищет локализованную строку, похожую на Creator IsValid Method of ValueObject1.
         /// </summary>
         internal static string AnalyzerMessageFormat {
             get {
@@ -80,7 +80,7 @@ namespace Analyzer1 {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Creator IsValid Method of ValueObject.
+        ///   Ищет локализованную строку, похожую на Creator IsValid Method of ValueObject1.
         /// </summary>
         internal static string AnalyzerTitle {
             get {
