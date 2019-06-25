@@ -18,6 +18,10 @@ namespace Analyzer1
     {
         private const string title = "Create IsValid method";
 
+        private const string DataAnnotationsUsingString = @"using System.ComponentModel.DataAnnotations;";
+        private UsingDirectiveSyntax DataAnnotationUsing => SyntaxFactory.ParseSyntaxTree(DataAnnotationsUsingString)
+            .GetRoot().DescendantNodes().OfType<UsingDirectiveSyntax>().Single();
+
         private static MethodDeclarationSyntax IsValidMethodTemplate => SyntaxFactory.ParseSyntaxTree(
       @"
       public static IEnumerable<ValidationResult> IsValid()
@@ -54,8 +58,19 @@ namespace Analyzer1
         private async Task<Document> MakeSolution(Document document, ClassDeclarationSyntax cds, CancellationToken cancellationToken)
         {
             var oldTree = await document.GetSyntaxRootAsync();
-            var newCds = cds.AddMembers(IsValidMethodTemplate);
-            var newTree = oldTree.ReplaceNode(cds, newCds);
+            var newCds = cds.WithMembers(new SyntaxList<MemberDeclarationSyntax>(IsValidMethodTemplate));
+            var dataAnnotationUsingExists = oldTree.DescendantNodes().OfType<UsingDirectiveSyntax>().Any(x => x.Language == DataAnnotationsUsingString);
+
+            var newTree = oldTree;
+            if (!dataAnnotationUsingExists)
+            {
+                var compilationUnit = SyntaxFactory.ParseCompilationUnit(oldTree.ToString());
+                compilationUnit = compilationUnit.AddUsings(DataAnnotationUsing);
+
+                newTree = await compilationUnit.SyntaxTree.GetRootAsync(cancellationToken);
+            }
+
+            newTree = newTree.ReplaceNode(cds, newCds);
             return document.WithSyntaxRoot(newTree);
 
         }
